@@ -44,11 +44,20 @@ public class SubtitleInfo {
     @OpenSubtitlesApiSpec(fieldName = "SubEncoding")
     private String encoding;
 
+    @OpenSubtitlesApiSpec(fieldName = "SubRating")
+    private double subRating;
+
+    @OpenSubtitlesApiSpec(fieldName = "SubBad")
+    private double subBad;
+
+    @OpenSubtitlesApiSpec(fieldName = "Score")
+    private double score;
+
     public SubtitleInfo() {
     }
 
     public SubtitleInfo(int id, int subtitleFileId, String language, String fileName, String format, int downloadsNo,
-                        String osLink, String downloadLink, String zipDownloadLink, String encoding) {
+                        String osLink, String downloadLink, String zipDownloadLink, String encoding,double subRating,double subBad,double score ) {
         this.id = id;
         this.subtitleFileId = subtitleFileId;
         this.language = language;
@@ -59,6 +68,9 @@ public class SubtitleInfo {
         this.downloadLink = downloadLink;
         this.zipDownloadLink = zipDownloadLink;
         this.encoding = encoding;
+        this.subRating=subRating;
+        this.subBad=subBad;
+        this.score=score;
     }
 
     public int getId() {
@@ -101,6 +113,18 @@ public class SubtitleInfo {
         return encoding;
     }
 
+    public double getSubRating() {
+        return subRating;
+    }
+
+    public double getSubBad() {
+        return subBad;
+    }
+
+    public double getScore() {
+        return score;
+    }
+
     @Override
     public String toString() {
         return "SubtitleInfo{" +
@@ -114,6 +138,9 @@ public class SubtitleInfo {
                 ", downloadLink='" + downloadLink + '\'' +
                 ", zipDownloadLink='" + zipDownloadLink + '\'' +
                 ", encoding='" + encoding + '\'' +
+                ", subRating=" + subRating +
+                ", subBad=" + subBad +
+                ", score=" + score +
                 '}';
     }
 }
